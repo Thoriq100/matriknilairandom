@@ -1,0 +1,99 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<iomanip.h>
+
+/**
+
+*Array 2 Dimensi, Matrix Urut Baris, Kolom, Elemen Awal-Akhir, Cetak Serentak
+*/
+
+void main() {
+    int a[10][10], b[10][10], brs, klm, x,y,z;
+    randomize();
+   cout << "SOAL NO. 1"<<endl<<endl;
+   cout << "Masukkan jumlah baris: "; cin >> brs;
+    cout << "Masukkan jumlah kolom: "; cin >> klm;
+    cout << endl;
+
+//soal A
+   for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+            a[i][j]=random(50);
+        }
+    }
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+            for(int k=0; k<klm; k++) {
+                if(a[i][j] < a[k][j]) {
+                    y=a[i][j];        
+                    a[i][j]=a[k][j];
+                    a[k][j]=y;
+                }
+            }
+        }
+    }
+   cout << "JAWABAN SOAL 1A" << endl <<endl;
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+      cout << setw(5) << a[i][j];
+        }
+        cout << endl;
+    }
+
+cout<<endl<<endl;
+//soal 1B
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+            a[i][j]=random(50);
+        }
+    }
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+            for(int k=0; k<klm; k++) {
+                if(a[i][j] < a[i][k]) {
+                    x=a[i][j];
+                    a[i][j]=a[i][k];
+                    a[i][k]=x;
+                }
+            }
+        }
+    }
+   cout << "JAWABAN SOAL 1B" << endl <<endl;
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+      cout << setw(5) << a[i][j];
+        }
+        cout << endl;
+    }
+
+
+cout<<endl<<endl;
+//soal 1C
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+            a[i][j]=random(50);
+        }
+    }
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+            for(int k=0; k<klm; k++) {
+                for(int l=0; l<klm; l++) {
+                    if(a[i][j] < a[k][l]) {
+                    z=a[i][j];
+                    a[i][j]=a[k][l];
+                    a[k][l]=z;
+                    }
+                }
+            }
+        }
+    }
+   cout << "JAWABAN SOAL 1C" << endl <<endl;
+    for(int i=0; i<brs; i++) {
+        for(int j=0; j<klm; j++) {
+      cout << setw(5) << a[i][j];
+        }
+        cout << endl;
+    }
+    getch();
+}
